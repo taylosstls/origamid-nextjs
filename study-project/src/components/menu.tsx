@@ -13,6 +13,16 @@ export default function Menu() {
           Sobre
         </Link>
       </li>
+      <li>
+        <Link href="/produtos" scroll={true} prefetch={true}>
+          Produtos
+        </Link>
+      </li>
+      <li>
+        <Link href="/cursos" scroll={true} prefetch={true}>
+          Cursos
+        </Link>
+      </li>
     </ul>
   );
 }
