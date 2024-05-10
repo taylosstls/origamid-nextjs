@@ -1,11 +1,8 @@
 // solução de importação
 import Acessos from '@/components/acessos';
 import ServerFetch from '@/components/serverFetch';
-import dynamic from 'next/dynamic';
+import Width from '@/components/width';
 
-export const Width = dynamic(() => import('@/components/width'), {
-  ssr: false,
-});
 
 export default function HomePage() {
   return (

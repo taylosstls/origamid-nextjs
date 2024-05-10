@@ -14,13 +14,18 @@ export default function Menu() {
         </Link>
       </li>
       <li>
-        <Link href="/produtos" scroll={true} prefetch={true}>
+        <Link href="/produtos">
           Produtos
         </Link>
       </li>
       <li>
-        <Link href="/cursos" scroll={true} prefetch={true}>
+        <Link href="/cursos">
           Cursos
+        </Link>
+      </li>
+      <li>
+        <Link href="/acoes">
+          Ações
         </Link>
       </li>
     </ul>
