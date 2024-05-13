@@ -1,4 +1,4 @@
-## Exercício Dinamic Routes
+## Exercício Cache Module
 
 - Criar as rotas `/produtos` e `/produtos/adicionar`:
   - Na rota `/produtos`, faça um fetch para `https://api.origamid.online/produtos` e mostre a lista de produtos
