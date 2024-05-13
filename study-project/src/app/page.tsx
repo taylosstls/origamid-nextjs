@@ -1,16 +1,27 @@
-// solução de importação
-import Acessos from '@/components/acessos'
-import ServerFetch from '@/components/serverFetch'
-import Width from '@/components/width'
+'use client'
+import { useEffect, useState } from 'react';
+import { setCookie } from '@/actions/set-cookie';
 
 export default function HomePage() {
+  const [valor, setValor] = useState('');
+
+  async function handleClick() {
+    const response = await setCookie('segredo', '123456');
+    console.log(response);
+
+    setValor(response.value);
+  }
+
+  useEffect(() => {
+    setCookie('width', document.documentElement.clientWidth.toString());
+  }, []);
+
   return (
     <main>
-      <h1>Home</h1>
-      <Acessos />
-      <Width />
+      <h1>Home: {valor}</h1>
 
-      <ServerFetch />
+      <button onClick={handleClick}>Definir Cookies</button>
+
     </main>
   )
 }
