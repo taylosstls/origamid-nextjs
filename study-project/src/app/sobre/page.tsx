@@ -1,4 +1,4 @@
-import ClientFetch from "@/components/clientFetch";
+import ClientFetch from '@/components/clientFetch'
 
 export default function SobrePage() {
   return (
@@ -6,5 +6,5 @@ export default function SobrePage() {
       <h1>Sobre</h1>
       <ClientFetch />
     </main>
-  );
+  )
 }

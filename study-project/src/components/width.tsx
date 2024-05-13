@@ -1,20 +1,20 @@
-'use client';
-import React from 'react';
+'use client'
+import React from 'react'
 
 export default function Width() {
-  const [ativar, setAtivar] = React.useState(false);
-  const [width, setWidth] = React.useState(0);
+  const [ativar, setAtivar] = React.useState(false)
+  const [width, setWidth] = React.useState(0)
 
   React.useEffect(() => {
     const handleResize = () => {
-      setWidth(document.documentElement.clientWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize();
+      setWidth(document.documentElement.clientWidth)
+    }
+    window.addEventListener('resize', handleResize)
+    handleResize()
     return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
     <div>
@@ -23,5 +23,5 @@ export default function Width() {
       </h2>
       <button onClick={() => setAtivar((b) => !b)}>Click</button>
     </div>
-  );
+  )
 }

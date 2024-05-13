@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function ProdutosPage() {
   return (
@@ -6,7 +6,6 @@ export default function ProdutosPage() {
       <h1>Produtos</h1>
 
       <Link href="/produtos/5">Produto monitor</Link>
-      
     </main>
-  );
+  )
 }

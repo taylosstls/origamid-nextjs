@@ -98,12 +98,16 @@ button {
 button:hover,
 button:focus {
   background: var(--color);
-  box-shadow: 0 0 0 3px var(--color-light), 0 0 0 4px var(--color);
+  box-shadow:
+    0 0 0 3px var(--color-light),
+    0 0 0 4px var(--color);
   outline: none;
 }
 
 button:active {
-  box-shadow: 0 0 0 3px var(--color), 0 0 0 4px var(--color);
+  box-shadow:
+    0 0 0 3px var(--color),
+    0 0 0 4px var(--color);
 }
 
 button:disabled {

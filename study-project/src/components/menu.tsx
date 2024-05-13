@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default function Menu() {
   return (
@@ -14,20 +14,14 @@ export default function Menu() {
         </Link>
       </li>
       <li>
-        <Link href="/produtos">
-          Produtos
-        </Link>
+        <Link href="/produtos">Produtos</Link>
       </li>
       <li>
-        <Link href="/cursos">
-          Cursos
-        </Link>
+        <Link href="/cursos">Cursos</Link>
       </li>
       <li>
-        <Link href="/acoes">
-          Ações
-        </Link>
+        <Link href="/acoes">Ações</Link>
       </li>
     </ul>
-  );
+  )
 }

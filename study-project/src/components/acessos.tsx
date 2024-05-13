@@ -1,9 +1,9 @@
 // @/component/acessos -> server component
-import fs from 'fs/promises';
+import fs from 'fs/promises'
 
 export default async function Acessos() {
-  await fs.appendFile('acesso.txt', `${Date.now()} `, 'utf8');
-  const data = await fs.readFile('acesso.txt', 'utf8');
+  await fs.appendFile('acesso.txt', `${Date.now()} `, 'utf8')
+  const data = await fs.readFile('acesso.txt', 'utf8')
 
-  return <div>{data}</div>;
+  return <div>{data}</div>
 }
