@@ -22,6 +22,9 @@ export default function Menu() {
       <li>
         <Link href="/acoes">Ações</Link>
       </li>
+      <li>
+        <Link href="/acoes-cache">Cache</Link>
+      </li>
     </ul>
   )
 }
