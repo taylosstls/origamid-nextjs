@@ -6,12 +6,17 @@ type Produto = {
   nome: string
 }
 
-export default function ClientFetch() {
+export default function ClientFetch({awaitTime} : {awaitTime?: number}) {
   const [data, setData] = useState<Produto[]>([])
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('https://api.origamid.online/produtos')
+      
+      if (awaitTime) await new Promise(resolve => setTimeout(resolve, awaitTime * 1000))
+
+      const response = await fetch('https://api.origamid.online/produtos', {
+        cache: 'no-store'
+      })
       const productList = (await response.json()) as Produto[]
 
       console.log(productList)
@@ -19,7 +24,7 @@ export default function ClientFetch() {
     }
 
     fetchData()
-  }, [])
+  }, [awaitTime])
 
   return (
     <div>
