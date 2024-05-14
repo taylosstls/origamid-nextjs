@@ -9,12 +9,12 @@ export default function Menu() {
         </Link>
       </li>
       <li>
-        <Link href="/sobre#empresas" scroll={true} prefetch={true}>
-          Sobre
+        <Link href="/produtos-lista#empresas" scroll={true} prefetch={true}>
+          Produtos Lista
         </Link>
       </li>
       <li>
-        <Link href="/produtos-lista">Listagem de Produtos</Link>
+        <Link href="/produtos-lista-erro">Produtos com Erro</Link>
       </li>
       <li>
         <Link href="/produtos">Produtos</Link>

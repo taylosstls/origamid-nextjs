@@ -1,15 +1,10 @@
-import ProdutosLista from "@/components/produtos-lista";
+import ClientFetch from '@/components/clientFetch'
 
-export default async function ProdutosPage() {
-
-
+export default function ProdutosPage() {
   return (
     <main>
-      <h1>Produtos</h1>
-
-      <p>Essa aqui é a lista de produtos</p>
-      
-      <ProdutosLista />
+      <h1>Produtos com Fetch</h1>
+      <ClientFetch />
     </main>
-  );
+  )
 }
