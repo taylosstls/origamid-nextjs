@@ -1,8 +1,8 @@
 
-// actions/adicionar-produto.ts
+// actions/adicionar-produto.tsx
 'use server';
 
-import { ProductParams } from '@/app/produtos/[id]/page';
+import { ProductParams } from '@/components/produtos-lista';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
