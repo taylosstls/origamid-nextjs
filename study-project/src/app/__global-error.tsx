@@ -1,5 +1,6 @@
 // global-error.tsx
-'use client'; // Funcionará de maneira Global
+// Funcionará de maneira Global, comentado com "__" para ser ignorado
+'use client';
 
 export default function GlobalError() {
   return (
