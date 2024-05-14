@@ -1,4 +1,4 @@
-type Curso = {
+export type Curso = {
   id: number;
   slug: string;
   nome: string;
@@ -7,7 +7,7 @@ type Curso = {
   total_horas: number;
 };
 
-type Aula = {
+export type Aula = {
   id: number;
   slug: string;
   nome: string;
