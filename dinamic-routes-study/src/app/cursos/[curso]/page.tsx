@@ -2,7 +2,7 @@ import { getCurso, getCursos } from "@/api/cursos";
 import Menu from "@/components/menu";
 import { Metadata } from "next";
 import Link from "next/link";
-
+import { notFound } from 'next/navigation';
 type CursoParams = {
   params: {
     curso: string
@@ -22,9 +22,18 @@ export async function generateStaticParams() {
 export async function generateMetadata({params}: CursoParams): Promise<Metadata> {
   const curso = await getCurso(params.curso)
 
-  return {
-    title: `Curso de ${curso.nome}`,
-    description: curso.descricao
+  console.log(curso)
+
+  if (!curso.error) {
+    return {
+      title: `Curso de ${curso.nome}`,
+      description: curso.descricao
+    };
+  } else {
+    return {
+      title: 'Cursos Origamid',
+      description: 'Cursos online de Front End e UI Design.',
+    };
   }
 }
 
@@ -32,6 +41,8 @@ export default async function CursoId({params}: CursoParams) {
   console.log(params)
 
   const curso = await getCurso(params.curso)
+  if (curso?.error) return notFound()
+
   return (
     <main>
       <Menu />
@@ -39,7 +50,6 @@ export default async function CursoId({params}: CursoParams) {
       <p className="font-bold uppercase">{curso.descricao}</p>
       <p>Total de Horas: {curso.total_horas}</p>
       <p>Total de Aulas: {curso.total_aulas}</p>
-
 
       <h2 className="text-xl font-bold mt-5">Aulas</h2>
       <ul className="">

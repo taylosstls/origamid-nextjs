@@ -1,5 +1,6 @@
 import { Aula, getAula, getCurso, getCursos } from "@/api/cursos";
 import Menu from "@/components/menu";
+import { Metadata } from "next";
 import Link from "next/link";
 
 type AulaParams = {
