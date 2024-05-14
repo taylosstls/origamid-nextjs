@@ -126,6 +126,12 @@ img {
   display: block;
 }
 
+img {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+
 .flex {
   display: flex;
   gap: 1rem;

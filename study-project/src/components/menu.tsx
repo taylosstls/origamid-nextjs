@@ -30,9 +30,14 @@ export default function Menu() {
     <Busca />
   </Suspense>
     <ul className="menu">
-      <li>
+    <li>
         <Link href="/" prefetch={true}>
           Home
+        </Link>
+      </li>
+      <li>
+        <Link href="/animais">
+          Animais
         </Link>
       </li>
       <li>
