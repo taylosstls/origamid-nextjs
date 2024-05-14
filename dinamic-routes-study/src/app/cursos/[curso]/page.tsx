@@ -1,5 +1,4 @@
 import { getCurso, getCursos } from "@/api/cursos";
-import Menu from "@/components/menu";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from 'next/navigation';
@@ -45,7 +44,6 @@ export default async function CursoId({params}: CursoParams) {
 
   return (
     <main>
-      <Menu />
       <h1 className="text-2xl font-bold uppercase mb-5">{curso.nome}</h1>
       <p className="font-bold uppercase">{curso.descricao}</p>
       <p>Total de Horas: {curso.total_horas}</p>

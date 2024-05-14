@@ -1,5 +1,4 @@
 import { getCursos } from "@/api/cursos";
-import Menu from "@/components/menu";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -19,7 +18,6 @@ export default async function CursosPage() {
 
   return (
     <main>
-      <Menu />
       <h1 className="text-2xl font-bold mb-5">Cursos</h1>
 
       <ul className="flex gap-5">

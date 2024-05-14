@@ -1,6 +1,4 @@
 import { Aula, getAula, getCurso, getCursos } from "@/api/cursos";
-import Menu from "@/components/menu";
-import { Metadata } from "next";
 import Link from "next/link";
 
 type AulaParams = {
@@ -30,7 +28,6 @@ export default async function CursoAula({params}: AulaParams) {
   const aula = await getAula(params.curso, params.aula)
   return (
     <main>
-      <Menu />
       <h1 className="text-2xl font-bold">{aula.nome}</h1>
       <p>{aula.descricao}</p>
       <p>Duração do curso: {aula.tempo} horas</p>
