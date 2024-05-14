@@ -4,13 +4,13 @@ type PageParams = {
   }
 }
 
-type ProductParams = {
-  id: number
+export type ProductParams = {
+  id?: string
   nome: string
   preco: number
   descricao: string
   estoque: number
-  importado: boolean
+  importado: number
 }
 
 export default async function ProdutosInternoPage({ params }: PageParams) {
