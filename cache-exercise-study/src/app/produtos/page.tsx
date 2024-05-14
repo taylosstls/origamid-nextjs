@@ -8,7 +8,11 @@ export type Product = {
 }
 
 export default async function ProductListPage() {
-  const response = await fetch('https://api.origamid.online/produtos')
+  const response = await fetch('https://api.origamid.online/produtos', {
+    next: {
+      revalidate: 10 * 60 // update a cada 10 minutos, se nenhum produto for cadastrado dentro da API
+    }
+  })
   const listProducts = await response.json() as Product[]
 
   // console.log(listProducts)
