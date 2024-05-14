@@ -4,7 +4,7 @@ import Menu from "@/components/menu";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Second lesson",
+  title: "Dinamic Routes Study",
   description: "Working with API",
 };
 
