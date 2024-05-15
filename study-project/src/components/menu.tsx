@@ -62,6 +62,11 @@ export default function Menu() {
       <li>
         <Link href="/acoes-cache">Cache</Link>
       </li>
+      <li>
+        <Link href="/script-externo">
+          Scripts externos
+        </Link>
+      </li>
     </ul>
   </>
 }
