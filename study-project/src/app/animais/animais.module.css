@@ -1,0 +1,24 @@
+.animais {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2rem;
+  list-style: none;
+  margin: 0;
+  margin-block-start: 0;
+  margin-inline-start: 0;
+  padding-block-start: 0;
+  padding-inline-start: 0;
+}
+
+.animais p {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .875rem;
+  letter-spacing: .1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .animais {
+    grid-template-columns: 1fr;
+  }
+}
