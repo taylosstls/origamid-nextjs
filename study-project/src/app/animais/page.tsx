@@ -14,12 +14,12 @@ export default async function AnimaisPage() {
 
   return (
     <main>
-      <h1>Animais</h1>
+      <h1 className={styles.titulo}>Animais</h1>
         
       <ul className={styles.animais}>
         {animais.map((animal, i) => {
         return (
-          /** Qualidade padrão do next 75% e converte a JPG/PNG para webp
+          /** Qualidade padrão do next 75% e converte a JPG/PNG para webp, SVG não precisa de sizes
           O sizes gera novas imgs de largura conforme pré-definido no deviceSizes
           é possível usar mediaquery pra não carregar sempre 100vw, no caso de 2 / 3 / 4 colunas, etc.
           deviceSizes: [600, 800, 1200, 2400, 3600] */

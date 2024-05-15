@@ -10,6 +10,12 @@
   padding-inline-start: 0;
 }
 
+.titulo {
+  font-family: var(--font-guerrilla);
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
+
 .animais p {
   text-transform: uppercase;
   font-weight: 600;
