@@ -1,0 +1,21 @@
+{
+  "git.enabled": true,
+  "files.exclude": {
+    "node_modules": true,
+    ".gitignore": true,
+    "package-lock.json": true,
+    "package.json": true,
+    ".eslintrc*": true,
+    "tsconfig.*": true,
+    "next-env.d.ts": true,
+    "next.config.mjs": true,
+    "README.md": true,
+    "**/.git": false,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  }
+
+}
