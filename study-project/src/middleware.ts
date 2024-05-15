@@ -6,9 +6,10 @@ export function middleware(request: NextRequest) {
 
   // nova rota
   if (request.nextUrl.pathname.startsWith('/entrar')) {
-    response.cookies.set('redirecionouUsuario', 'true', {
-      httpOnly: true,
-      secure: true
+    response.cookies.set('redirectUser', 'true', {
+      sameSite: 'lax',
+      // httpOnly: true,
+      // secure: true
     })
     return NextResponse.redirect(new URL('/', request.url));
   }
