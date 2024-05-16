@@ -33,7 +33,7 @@ export default async function Login(state: {}, formData: FormData) {
     })
 
     console.log(data)
-    return {data: null, ok: true, error: ''}
+    return { data: null, ok: true, error: '' }
 
   } catch (error: unknown) {
     return apiError(error)
