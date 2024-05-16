@@ -22,7 +22,7 @@ function FormButton() {
 }
 
 export default function LoginForm() {
-  const [state, action] = useFormState(loginAccount , {
+  const [state, action] = useFormState(loginAccount, {
     ok: false,
     error: '',
     data: null
