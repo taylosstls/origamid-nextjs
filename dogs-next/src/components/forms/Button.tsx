@@ -1,5 +1,4 @@
 import React, { ComponentProps } from 'react';
-import styles from './Button.module.css';
 
 interface ButtonProps extends ComponentProps<'button'> {
   children: string
@@ -7,7 +6,7 @@ interface ButtonProps extends ComponentProps<'button'> {
 
 const Button = ({ children, ...props }: ButtonProps) => {
   return (
-    <button {...props} className={styles.button}>
+    <button {...props} className='button'>
       {children}
     </button>
   );
