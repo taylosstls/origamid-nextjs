@@ -1,10 +1,10 @@
 'use client'
 import { useFormState, useFormStatus } from "react-dom";
 
-import Login from "@/actions/login";
+import loginAccount from "@/actions/loginAccount";
 import Button from "@/components/forms/Button";
 import Input from "@/components/forms/Input";
-import ErrorMessage from "../helper/ErrorMessage";
+import ErrorMessage from "@/components/helper/ErrorMessage";
 import { useEffect } from "react";
 import Link from "next/link";
 
@@ -22,7 +22,7 @@ function FormButton() {
 }
 
 export default function LoginForm() {
-  const [state, action] = useFormState(Login , {
+  const [state, action] = useFormState(loginAccount , {
     ok: false,
     error: '',
     data: null

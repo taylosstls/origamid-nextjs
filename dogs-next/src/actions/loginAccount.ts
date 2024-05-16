@@ -4,7 +4,7 @@ import { cookies } from "next/headers"
 import apiError from "@/functions/api-error"
 import { TOKEN_POST } from "@/functions/api"
 
-export default async function Login(state: {}, formData: FormData) {
+export default async function loginAccount(state: {}, formData: FormData) {
   const username = formData.get('username') as string | null
   const password = formData.get('password') as string | null
 
