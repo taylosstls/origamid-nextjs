@@ -26,6 +26,7 @@ export default function LoginForm() {
   })
 
   useEffect(() => {
+    // Só faz o redirect via hardrefresh se estiver OK na geração do token
     if(state.ok) window.location.href = '/conta'
   }, [state.ok])
 
