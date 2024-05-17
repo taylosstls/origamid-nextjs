@@ -1,4 +1,10 @@
-export function passwordValidation({ password, confirmPassword }: { password: string, confirmPassword: string }) {
+export function passwordValidation({
+  password,
+  confirmPassword,
+}: {
+  password: string;
+  confirmPassword: string;
+}) {
   if (
     password.length < 8 ||
     !/[a-z]/.test(password) ||
@@ -11,6 +17,5 @@ export function passwordValidation({ password, confirmPassword }: { password: st
     );
   }
 
-  if (password !== confirmPassword)
-    throw new Error('As senhas não coincidem');
+  if (password !== confirmPassword) throw new Error('As senhas não coincidem');
 }

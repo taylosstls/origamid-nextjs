@@ -19,7 +19,7 @@ export default async function resetPasswordAccount(
     if (!login || !key || !password || !confirmPassword)
       throw new Error('Preencha os dados');
 
-    passwordValidation({ password, confirmPassword })
+    passwordValidation({ password, confirmPassword });
 
     const passwordReset = PASSWORD_RESET();
 

@@ -19,7 +19,7 @@ export default async function createAccount(state: {}, formData: FormData) {
       throw new Error('Nome de usuário deve ter no mínimo 3 caracteres');
     if (!email.includes('@')) throw new Error('E-mail inválido');
 
-    passwordValidation({ password, confirmPassword })
+    passwordValidation({ password, confirmPassword });
 
     const createUser = USER_POST();
 
