@@ -16,8 +16,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  const { data } = await userGetCache()
+  const { data } = await userGetCache();
 
   return (
     <html lang="pt-BR">

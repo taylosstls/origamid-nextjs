@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -7,10 +7,13 @@ import { usePathname } from 'next/navigation';
 import useMedia from '@/hooks/useMedia';
 import styles from './AccountHeader.module.css';
 
+import logoutAccount from '@/actions/logoutAccount';
+
 import FeedIcon from '@/icons/FeedIcon';
 import StaticsIcon from '@/icons/StaticsIcon';
 import AddIcon from '@/icons/AddIcon';
 import LogoutIcon from '@/icons/LogoutIcon';
+import { useUser } from '@/context/UserContext';
 
 function getTitle(pathname: string) {
   switch (pathname) {
@@ -23,7 +26,6 @@ function getTitle(pathname: string) {
   }
 }
 
-
 export default function AccountHeader() {
   const mobile = useMedia('(max-width: 40rem)');
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -33,35 +35,46 @@ export default function AccountHeader() {
     setMobileMenu(false);
   }, [pathname]);
 
-  function handleLogout() {
-    // userLogout();
+  const { setUserState } = useUser();
+
+  async function handleLogout() {
+    setUserState(null);
+    await logoutAccount();
   }
 
   return (
     <header className={styles.header}>
-      <h1 className='title'>{getTitle(pathname)}</h1>
+      <h1 className="title">{getTitle(pathname)}</h1>
       {mobile && (
         <button
           aria-label="Menu"
-          className={`${styles.mobileButton} ${mobileMenu && styles.mobileButtonActive
-            }`}
+          className={`${styles.mobileButton} ${
+            mobileMenu && styles.mobileButtonActive
+          }`}
           onClick={() => setMobileMenu(!mobileMenu)}
         ></button>
       )}
 
       <nav
-        className={`${mobile ? styles.navMobile : styles.nav} ${mobileMenu && styles.navMobileActive
-          }`}
+        className={`${mobile ? styles.navMobile : styles.nav} ${
+          mobileMenu && styles.navMobileActive
+        }`}
       >
         <Link href="/conta" className={pathname === '/conta' ? 'active' : ''}>
           <FeedIcon />
           {mobile && 'Minhas Fotos'}
         </Link>
-        <Link href="/conta/estatisticas" className={pathname === '/conta/estatisticas' ? 'active' : ''}>
+        <Link
+          href="/conta/estatisticas"
+          className={pathname === '/conta/estatisticas' ? 'active' : ''}
+        >
           <StaticsIcon />
           {mobile && 'Estatísticas'}
         </Link>
-        <Link href="/conta/postar" className={pathname === '/conta/postar' ? 'active' : ''}>
+        <Link
+          href="/conta/postar"
+          className={pathname === '/conta/postar' ? 'active' : ''}
+        >
           <AddIcon />
           {mobile && 'Adicionar Foto'}
         </Link>
@@ -72,4 +85,4 @@ export default function AccountHeader() {
       </nav>
     </header>
   );
-};
+}

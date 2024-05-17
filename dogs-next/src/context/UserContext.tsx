@@ -23,11 +23,12 @@ type IUserContext = {
 export const UserContext = createContext<IUserContext | null>(null);
 
 export const useUser = () => {
-  const context = useContext(UserContext)
-  if (context === null) throw new Error('useContext deve estar dentro do Provider');
+  const context = useContext(UserContext);
+  if (context === null)
+    throw new Error('useContext deve estar dentro do Provider');
 
-  return context
-}
+  return context;
+};
 
 export function UserContextProvider({
   children,

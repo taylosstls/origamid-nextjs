@@ -43,7 +43,7 @@
   border-color: #fb1;
 }
 
-.nav :global(a.active) svg>* {
+.nav :global(a.active) svg > * {
   fill: #fb1;
 }
 
@@ -68,7 +68,9 @@
   height: 2px;
   border-radius: 2px;
   background: currentColor;
-  box-shadow: 0 6px currentColor, 0 -6px currentColor;
+  box-shadow:
+    0 6px currentColor,
+    0 -6px currentColor;
   transition: 0.2s;
 }
 
@@ -86,7 +88,9 @@
   transform: rotate(90deg);
   width: 4px;
   height: 4px;
-  box-shadow: 0 8px currentColor, 0 -8px currentColor;
+  box-shadow:
+    0 8px currentColor,
+    0 -8px currentColor;
 }
 
 .navMobile {
@@ -123,8 +127,8 @@
   cursor: pointer;
 }
 
-.navMobile a:hover svg>*,
-.navMobile button:hover svg>* {
+.navMobile a:hover svg > *,
+.navMobile button:hover svg > * {
   fill: #fb1;
 }
 
