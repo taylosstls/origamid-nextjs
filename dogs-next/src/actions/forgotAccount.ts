@@ -18,6 +18,7 @@ export default async function forgotAccount(state: {}, formData: FormData) {
       headers: {
         'Content-Type': 'application/json',
       },
+      // Se for formData, não pode passar o content-type e não pode passar via JSON.stringify
       body: JSON.stringify({
         login,
         url: urlReset,

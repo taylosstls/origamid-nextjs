@@ -1,14 +1,28 @@
 import { Metadata } from 'next';
+import LoginFormResetPassword from '@/components/login/loginFormResetPassword/LoginFormResetPassword';
 
 export const metadata: Metadata = {
   title: 'Resetar a senha | Dogs',
   description: 'Resete a sua conta no site Dogs.',
 };
 
-export default async function ResetarPage() {
+type ResetSearchParams = {
+  searchParams: {
+    key: string;
+    login: string;
+  };
+};
+
+export default async function ResetarPage({ searchParams }: ResetSearchParams) {
+  console.log(searchParams);
   return (
-    <main>
-      <h1>Resetar</h1>
-    </main>
+    <div className="animeLeft">
+      <h1 className="title">Resete a senha</h1>
+
+      <LoginFormResetPassword
+        keyToken={searchParams.key}
+        login={searchParams.key}
+      />
+    </div>
   );
 }

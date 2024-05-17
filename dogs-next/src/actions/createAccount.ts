@@ -12,7 +12,8 @@ export default async function createAccount(state: {}, formData: FormData) {
   console.log(username, email, password, confirmPassword);
 
   try {
-    if (!username || !email || !password) throw new Error('Preencha os dados');
+    if (!username || !email || !password || !confirmPassword)
+      throw new Error('Preencha os dados');
     if (username.length < 3)
       throw new Error('Nome de usuário deve ter no mínimo 3 caracteres');
     if (!email.includes('@')) throw new Error('E-mail inválido');
