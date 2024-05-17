@@ -1,15 +1,17 @@
-import LoginForm from "@/components/login/loginForm/LoginForm";
-import { Metadata } from "next"
+import LoginForm from '@/components/login/loginForm/LoginForm';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title:'Login | Dogs',
-  description: 'Logue na sua conta no site Dogs.'
-}
+  title: 'Login | Dogs',
+  description: 'Logue na sua conta no site Dogs.',
+};
 
 export default async function LoginPage() {
-  return <section className="animeLeft">
-  <h1 className="title">Login</h1>
+  return (
+    <section className="animeLeft">
+      <h1 className="title">Login</h1>
 
-  <LoginForm />
-</section>
+      <LoginForm />
+    </section>
+  );
 }

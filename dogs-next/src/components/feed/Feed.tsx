@@ -1,5 +1,5 @@
-import { PhotoProps } from "@/actions/photosGet";
-import FeedPhotos from "./FeedPhotos";
+import { PhotoProps } from '@/actions/photosGet';
+import FeedPhotos from './FeedPhotos';
 
 export default function Feed({ photos }: { photos: PhotoProps[] }) {
   return (
@@ -8,5 +8,5 @@ export default function Feed({ photos }: { photos: PhotoProps[] }) {
         <FeedPhotos photos={photos} />
       </div>
     </section>
-  )
+  );
 }

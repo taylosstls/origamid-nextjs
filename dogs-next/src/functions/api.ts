@@ -2,9 +2,8 @@
 export const API_URL = 'https://dogsapi.origamid.dev/json';
 
 export const TOKEN_POST = () => ({
-  url: `${API_URL}/jwt-auth/v1/token`
+  url: `${API_URL}/jwt-auth/v1/token`,
 });
-
 
 export function TOKEN_VALIDATE_POST(token) {
   return {
@@ -97,7 +96,7 @@ export function PHOTO_DELETE(id) {
 
 export function PASSWORD_LOST() {
   return {
-    url: API_URL + '/api/password/lost'
+    url: API_URL + '/api/password/lost',
   };
 }
 
