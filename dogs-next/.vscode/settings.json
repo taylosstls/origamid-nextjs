@@ -4,7 +4,7 @@
     "node_modules": true,
     ".gitignore": true,
     "package-lock.json": true,
-    "package.json": true,
+    "package.json": false,
     ".eslintrc*": true,
     "tsconfig.*": true,
     "next-env.d.ts": true,
@@ -17,5 +17,4 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true
   }
-
 }

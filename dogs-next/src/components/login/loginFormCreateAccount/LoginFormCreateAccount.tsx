@@ -7,20 +7,20 @@ import Input from "@/components/forms/Input";
 import ErrorMessage from "@/components/helper/ErrorMessage";
 import { useEffect } from "react";
 
-import styles from './LoginCreate.module.css'
+import styles from './LoginFormCreateAccount.module.css'
 
 function FormButton() {
   const { pending } = useFormStatus()
 
   return <>
-    { pending ? 
+    {pending ?
       <Button disabled={pending}>Cadastrando...</Button> :
       <Button>Cadastrar</Button>
     }
   </>
 }
 
-export default function LoginCreate() {
+export default function LoginFormCreateAccount() {
   const [state, action] = useFormState(createAccount, {
     ok: false,
     error: '',
@@ -29,7 +29,7 @@ export default function LoginCreate() {
 
   useEffect(() => {
     // Só faz o redirect via hardrefresh se estiver OK na geração do token
-    if(state.ok) window.location.href = '/conta'
+    if (state.ok) window.location.href = '/conta'
   }, [state.ok])
 
   return (
@@ -39,7 +39,7 @@ export default function LoginCreate() {
         <Input label="E-mail" name="email" type="email" />
         <Input label="Senha" name="password" type="password" />
         <Input label="Confirme a Senha" name="confirmPassword" type="password" />
-        
+
         <ErrorMessage error={state.error} />
 
         <FormButton />
