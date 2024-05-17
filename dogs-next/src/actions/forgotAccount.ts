@@ -18,7 +18,10 @@ export default async function forgotAccount(state: {}, formData: FormData) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: formData,
+      body: JSON.stringify({
+        login,
+        url: urlReset,
+      }),
     });
 
     if (!response.ok)
