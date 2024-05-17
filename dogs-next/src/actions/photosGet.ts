@@ -1,5 +1,8 @@
 'use server';
 
+import { PHOTOS_GET } from "@/functions/api";
+import apiError from "@/functions/api-error";
+
 export type PhotoProps = {
   id: number;
   author: string;
@@ -12,19 +15,32 @@ export type PhotoProps = {
   total_comments: string;
 };
 
-export default async function photosGet() {
-  const response = await fetch(
-    'https://dogsapi.origamid.dev/json/api/photo/?_page=1&_total=6&_user=0',
-    {
-      next: {
-        revalidate: 5 * 60, // revalida automaticamente a cada 5 minutos
-        tags: ['photos'], // ou se subir alguma foto
-      },
-    }
-  );
+type PhotosGetParams = {
+  page?: number;
+  total?: number;
+  user?: 0 | string;
+}
 
-  const data = (await response.json()) as PhotoProps[];
-  console.log(data);
+export default async function photosGet({ page = 1, total = 6, user = 0, }: PhotosGetParams = {}) {
+  try {
+    const getPhotos = PHOTOS_GET({ page, total, user });
+    const response = await fetch(getPhotos.url,
+      {
+        next: {
+          revalidate: 5 * 60, // revalida automaticamente a cada 5 minutos
+          tags: ['photos'], // ou se subir alguma foto
+        },
+      }
+    );
 
-  return data;
+    if (!response.ok) throw new Error('Erro ao carregar as imagens');
+
+    const data = (await response.json()) as PhotoProps[];
+    console.log(data);
+
+    return { data, ok: true, error: '' };
+  } catch (error) {
+    console.log(error)
+    return apiError(error);
+  }
 }
