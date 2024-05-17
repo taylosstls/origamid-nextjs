@@ -20,12 +20,6 @@ export function TOKEN_VALIDATE_POST(token) {
 export function USER_GET(token) {
   return {
     url: API_URL + '/api/user',
-    options: {
-      method: 'GET',
-      headers: {
-        Authorization: 'Bearer ' + token,
-      },
-    },
   };
 }
 
