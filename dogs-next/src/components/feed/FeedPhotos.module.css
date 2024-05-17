@@ -36,6 +36,8 @@
 }
 
 .photo img {
+  max-width: 100%;
+  width: auto;
   grid-area: 1/1;
 }
 

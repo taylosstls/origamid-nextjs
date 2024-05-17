@@ -14,7 +14,13 @@ export type PhotoProps = {
 
 export default async function photosGet() {
   const response = await fetch(
-    'https://dogsapi.origamid.dev/json/api/photo/?_page=1&_total=6&_user=0'
+    'https://dogsapi.origamid.dev/json/api/photo/?_page=1&_total=6&_user=0',
+    {
+      next: {
+        revalidate: 5 * 60, // revalida automaticamente a cada 5 minutos
+        tags: ['photos'], // ou se subir alguma foto
+      },
+    }
   );
 
   const data = (await response.json()) as PhotoProps[];

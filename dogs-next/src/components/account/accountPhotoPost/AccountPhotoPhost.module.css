@@ -1,0 +1,37 @@
+.label {
+  display: block;
+  font-size: 1rem;
+  line-height: 1;
+  padding-bottom: 0.5rem;
+}
+
+.photoPost {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 40rem) {
+  .photoPost {
+    grid-template-columns: 1fr;
+  }
+}
+
+.file {
+  margin-bottom: 1rem;
+}
+
+.preview {
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center center;
+  background-color: #f0f0f0;
+}
+
+.preview::after {
+  content: '';
+  display: block;
+  height: 0px;
+  padding-bottom: 100%;
+}

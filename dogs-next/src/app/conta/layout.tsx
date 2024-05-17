@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import AccountHeader from '@/components/account/AccountHeader';
+import AccountHeader from '@/components/account/accountHeader/AccountHeader';
 
 export default async function contaLayout({
   children,
