@@ -2,6 +2,7 @@
 import apiError from '@/functions/api-error';
 import { USER_POST } from '@/functions/api';
 import loginAccount from './loginAccount';
+import { passwordValidation } from '@/functions/password-account-validation';
 
 export default async function createAccount(state: {}, formData: FormData) {
   const username = formData.get('username') as string | null;
@@ -17,21 +18,8 @@ export default async function createAccount(state: {}, formData: FormData) {
     if (username.length < 3)
       throw new Error('Nome de usuário deve ter no mínimo 3 caracteres');
     if (!email.includes('@')) throw new Error('E-mail inválido');
-    if (
-      password.length < 8 ||
-      !/[a-z]/.test(password) ||
-      !/[A-Z]/.test(password) ||
-      !/\d/.test(password) ||
-      !/[!@#$%^&*()-_=+{};:,<.>]/.test(password)
-    ) {
-      throw new Error(
-        'Sua senha deve conter: Pelo menos 8 caracteres, uma letra maiúscula, um número e um caractere especial.'
-      );
-    }
 
-    if (password !== confirmPassword) {
-      throw new Error('As senhas não coincidem');
-    }
+    passwordValidation({ password, confirmPassword })
 
     const createUser = USER_POST();
 

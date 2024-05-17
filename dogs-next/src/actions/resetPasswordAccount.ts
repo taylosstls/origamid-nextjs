@@ -2,6 +2,7 @@
 import apiError from '@/functions/api-error';
 import { PASSWORD_RESET } from '@/functions/api';
 import { redirect } from 'next/navigation';
+import { passwordValidation } from '@/functions/password-account-validation';
 
 export default async function resetPasswordAccount(
   state: {},
@@ -18,20 +19,7 @@ export default async function resetPasswordAccount(
     if (!login || !key || !password || !confirmPassword)
       throw new Error('Preencha os dados');
 
-    if (
-      password.length < 8 ||
-      !/[a-z]/.test(password) ||
-      !/[A-Z]/.test(password) ||
-      !/\d/.test(password) ||
-      !/[!@#$%^&*()-_=+{};:,<.>]/.test(password)
-    ) {
-      throw new Error(
-        'Sua nova senha deve conter: Pelo menos 8 caracteres, uma letra maiúscula, um número e um caractere especial.'
-      );
-    }
-
-    if (password !== confirmPassword)
-      throw new Error('As senhas não coincidem');
+    passwordValidation({ password, confirmPassword })
 
     const passwordReset = PASSWORD_RESET();
 
