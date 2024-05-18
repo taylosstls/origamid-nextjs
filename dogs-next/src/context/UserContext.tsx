@@ -51,8 +51,8 @@ export function UserContextProvider({
     }
 
     // Só rodará a validação do Token caso o usuário esteja logado na aplicação
-    if (userState) validate()
-  }, [userState])
+    if (userState) validate();
+  }, [userState]);
 
   return (
     <UserContext.Provider value={{ user: userState, setUserState }}>
