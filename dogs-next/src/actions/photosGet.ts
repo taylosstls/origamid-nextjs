@@ -1,7 +1,7 @@
 'use server';
 
-import { PHOTOS_GET } from "@/functions/api";
-import apiError from "@/functions/api-error";
+import { PHOTOS_GET } from '@/functions/api';
+import apiError from '@/functions/api-error';
 
 export type PhotoProps = {
   id: number;
@@ -19,16 +19,19 @@ type PhotosGetParams = {
   page?: number;
   total?: number;
   user?: 0 | string;
-}
+};
 
-export default async function photosGet({ page = 1, total = 6, user = 0, }: PhotosGetParams = {}, optionsFront?: RequestInit) {
+export default async function photosGet(
+  { page = 1, total = 6, user = 0 }: PhotosGetParams = {},
+  optionsFront?: RequestInit
+) {
   try {
     const options = optionsFront || {
       next: {
         revalidate: 5 * 60, // revalida automaticamente a cada 5 minutos
         tags: ['photos'], // ou se subir alguma foto
       },
-    }
+    };
     const getPhotos = PHOTOS_GET({ page, total, user });
     const response = await fetch(getPhotos.url, options);
 
@@ -39,7 +42,7 @@ export default async function photosGet({ page = 1, total = 6, user = 0, }: Phot
 
     return { data, ok: true, error: '' };
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return apiError(error);
   }
 }

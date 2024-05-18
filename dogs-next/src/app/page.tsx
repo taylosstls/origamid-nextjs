@@ -6,9 +6,11 @@ export default async function Home() {
 
   return (
     <section className="container mainContainer">
-      {data?.length ?
-        <Feed photos={data} /> :
-        <div>Erro ao carregar o feed</div>}
+      {data?.length ? (
+        <Feed photos={data} />
+      ) : (
+        <div>Erro ao carregar o feed</div>
+      )}
     </section>
   );
 }

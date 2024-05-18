@@ -6,7 +6,13 @@ import photosGet, { PhotoProps } from '@/actions/photosGet';
 import Loading from '@/components/helper/loading/Loading';
 import FeedPhotos from './FeedPhotos';
 
-export default function Feed({ photos, username }: { photos: PhotoProps[], username?: 0 | string }) {
+export default function Feed({
+  photos,
+  username,
+}: {
+  photos: PhotoProps[];
+  username?: 0 | string;
+}) {
   const [photosFeed, setPhotosFeed] = useState<PhotoProps[]>(photos);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -15,36 +21,39 @@ export default function Feed({ photos, username }: { photos: PhotoProps[], usern
   const fetching = useRef(false);
 
   function infiniteScroll() {
-    if (fetching.current) return
+    if (fetching.current) return;
 
-    fetching.current = true
-    setLoading(true)
+    fetching.current = true;
+    setLoading(true);
 
     setTimeout(() => {
       setPage((currentPage) => currentPage + 1);
       fetching.current = false;
       setLoading(false);
-    }, 1000)
+    }, 1000);
   }
 
   useEffect(() => {
-    if(page === 1) return
+    if (page === 1) return;
     async function getPagePhotos(page: number) {
-      const actionData = await photosGet({ page: page, total: 6, user: 0 }, {
-        cache: 'no-store'
-      })
-      
-      if(actionData && actionData.data !== null) {
+      const actionData = await photosGet(
+        { page: page, total: 6, user: 0 },
+        {
+          cache: 'no-store',
+        }
+      );
+
+      if (actionData && actionData.data !== null) {
         const { data } = actionData;
         setPhotosFeed((currentPhotos) => [...currentPhotos, ...data]);
-        if(data.length < 6) setInfinite(false)
+        if (data.length < 6) setInfinite(false);
       }
     }
     getPagePhotos(page);
   }, [page]);
 
   useEffect(() => {
-    if(infinite) {
+    if (infinite) {
       window.addEventListener('scroll', infiniteScroll);
       window.addEventListener('wheel', infiniteScroll);
     } else {
@@ -55,16 +64,21 @@ export default function Feed({ photos, username }: { photos: PhotoProps[], usern
     return () => {
       window.removeEventListener('scroll', infiniteScroll);
       window.removeEventListener('wheel', infiniteScroll);
-    }
-
-  }, [infinite])
+    };
+  }, [infinite]);
 
   return (
     <section>
       <div>
         <FeedPhotos photos={photosFeed} />
         <div className={styles.loadingWrapper}>
-          {infinite ? (loading && <Loading />) : <p><em>Você visualizou todas as nossas publicações </em>🐶</p>}
+          {infinite ? (
+            loading && <Loading />
+          ) : (
+            <p>
+              <em>Você visualizou todas as nossas publicações </em>🐶
+            </p>
+          )}
         </div>
       </div>
     </section>

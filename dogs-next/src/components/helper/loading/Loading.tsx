@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Loading.module.css';
 
-export default function Loading( {modal}: {modal?: boolean}) {
+export default function Loading({ modal }: { modal?: boolean }) {
   const [step, setStep] = React.useState(0);
 
   React.useEffect(() => {
@@ -24,7 +24,7 @@ export default function Loading( {modal}: {modal?: boolean}) {
   }
 
   return (
-    <div className={modal? styles.wrapper : styles.wrapperNoModal}>
+    <div className={modal ? styles.wrapper : styles.wrapperNoModal}>
       <div className={styles.loading}>
         <svg
           width="46"
@@ -105,4 +105,4 @@ export default function Loading( {modal}: {modal?: boolean}) {
       </div>
     </div>
   );
-};
+}
