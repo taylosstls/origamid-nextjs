@@ -54,16 +54,9 @@ export function PHOTO_GET(id: string) {
   };
 }
 
-export function COMMENT_POST(id: number) {
+export function COMMENT_POST(id: string) {
   return {
     url: `${API_URL}/api/comment/${id}`,
-    options: {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
-      },
-    },
   };
 }
 

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from './PhotoContent.module.css';
 import { useUser } from '@/context/UserContext';
 
-//import PhotoComments from './PhotoComments';
+import PhotoComments from '../photoComments/PhotoComments';
 import PhotoDelete from '../photoDelete/PhotoDelete';
 import { PhotoData } from '@/actions/photoGet';
 
@@ -43,7 +43,7 @@ export default function PhotoContent({
           </ul>
         </div>
       </div>
-      {/* <PhotoComments single={single} id={photo.id} comments={comments} /> */}
+      {<PhotoComments single={single} id={photo.id} comments={comments} />}
     </div>
   );
 }

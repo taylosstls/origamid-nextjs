@@ -22,7 +22,7 @@ export default function PhotoDelete({ id }: { id: string }) {
     <>
       {loading ? (
         <button className={styles.delete} disabled>
-          Deletar
+          Deletando...
         </button>
       ) : (
         <button onClick={handleClick} className={styles.delete}>

@@ -1,0 +1,24 @@
+.comments {
+  overflow-y: auto;
+  word-break: break-word;
+  padding: 0 2rem;
+}
+
+.single.comments {
+  padding: 0px;
+}
+
+.comments li {
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0.5rem 1rem;
+  border-radius: 0.2rem;
+}
+
+.comments li b {
+  font-size: 1.15rem;
+  display: block;
+  padding: 0 0 .5rem;
+  text-transform: capitalize;
+}
