@@ -4,8 +4,8 @@ export default async function PerfilUserPage({
   params: { user: string };
 }) {
   return (
-    <main>
+    <section>
       <h1>Usuário: {params.user}</h1>
-    </main>
+    </section>
   );
 }

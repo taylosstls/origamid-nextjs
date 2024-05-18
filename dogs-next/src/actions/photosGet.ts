@@ -21,17 +21,16 @@ type PhotosGetParams = {
   user?: 0 | string;
 }
 
-export default async function photosGet({ page = 1, total = 6, user = 0, }: PhotosGetParams = {}) {
+export default async function photosGet({ page = 1, total = 6, user = 0, }: PhotosGetParams = {}, optionsFront?: RequestInit) {
   try {
+    const options = optionsFront || {
+      next: {
+        revalidate: 5 * 60, // revalida automaticamente a cada 5 minutos
+        tags: ['photos'], // ou se subir alguma foto
+      },
+    }
     const getPhotos = PHOTOS_GET({ page, total, user });
-    const response = await fetch(getPhotos.url,
-      {
-        next: {
-          revalidate: 5 * 60, // revalida automaticamente a cada 5 minutos
-          tags: ['photos'], // ou se subir alguma foto
-        },
-      }
-    );
+    const response = await fetch(getPhotos.url, options);
 
     if (!response.ok) throw new Error('Erro ao carregar as imagens');
 

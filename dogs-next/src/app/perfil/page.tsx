@@ -1,7 +1,7 @@
 export default async function PerfilPage() {
   return (
-    <main>
+    <section>
       <h1>Perfil</h1>
-    </main>
+    </section>
   );
 }
