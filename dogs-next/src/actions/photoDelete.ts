@@ -1,23 +1,10 @@
 'use server';
 
+import apiError from '@/functions/api-error';
 import { cookies } from 'next/headers';
 import { PHOTO_DELETE } from '@/functions/api';
-import apiError from '@/functions/api-error';
-import { PhotoProps } from './photosGet';
 import { revalidateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
-
-export type Comment = {
-  comment_ID: string;
-  comment_post_ID: string;
-  comment_author: string;
-  comment_content: string;
-};
-
-export type PhotoData = {
-  photo: PhotoProps;
-  comments: Comment[];
-};
 
 export default async function photoDelete(id: string) {
   try {
