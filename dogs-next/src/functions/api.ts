@@ -1,11 +1,10 @@
-// @ts-nocheck
 export const API_URL = 'https://dogsapi.origamid.dev/json';
 
 export const TOKEN_POST = () => ({
   url: `${API_URL}/jwt-auth/v1/token`,
 });
 
-export function TOKEN_VALIDATE_POST(token) {
+export function TOKEN_VALIDATE_POST(token: string) {
   return {
     url: API_URL + '/jwt-auth/v1/token/validate',
     options: {
@@ -17,7 +16,7 @@ export function TOKEN_VALIDATE_POST(token) {
   };
 }
 
-export function USER_GET(token) {
+export function USER_GET() {
   return {
     url: API_URL + '/api/user',
   };
@@ -49,17 +48,13 @@ export function PHOTOS_GET({
   };
 }
 
-export function PHOTO_GET(id) {
+export function PHOTO_GET(id: string) {
   return {
     url: `${API_URL}/api/photo/${id}`,
-    options: {
-      method: 'GET',
-      cache: 'no-store',
-    },
   };
 }
 
-export function COMMENT_POST(id, body) {
+export function COMMENT_POST(id: number) {
   return {
     url: `${API_URL}/api/comment/${id}`,
     options: {
@@ -68,12 +63,11 @@ export function COMMENT_POST(id, body) {
         'Content-Type': 'application/json',
         Authorization: 'Bearer ' + window.localStorage.getItem('token'),
       },
-      body: JSON.stringify(body),
     },
   };
 }
 
-export function PHOTO_DELETE(id) {
+export function PHOTO_DELETE(id: number) {
   return {
     url: `${API_URL}/api/photo/${id}`,
     options: {

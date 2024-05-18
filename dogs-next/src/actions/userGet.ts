@@ -17,7 +17,7 @@ async function userGet() {
     const token = cookies().get('token')?.value;
     if (!token) throw new Error('Token não encontrado.');
 
-    const { url } = USER_GET(token);
+    const { url } = USER_GET();
     const response = await fetch(url, {
       method: 'GET',
       headers: {

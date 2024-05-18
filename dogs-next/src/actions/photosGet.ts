@@ -4,7 +4,7 @@ import { PHOTOS_GET } from '@/functions/api';
 import apiError from '@/functions/api-error';
 
 export type PhotoProps = {
-  id: number;
+  id: string;
   author: string;
   title: string;
   date: string;
