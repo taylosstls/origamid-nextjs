@@ -1,7 +1,9 @@
 'use client';
-
 import { useEffect, useRef, useState } from 'react';
+
+import styles from './Feed.module.css';
 import photosGet, { PhotoProps } from '@/actions/photosGet';
+import Loading from '@/components/helper/loading/Loading';
 import FeedPhotos from './FeedPhotos';
 
 export default function Feed({ photos, username }: { photos: PhotoProps[], username?: 0 | string }) {
@@ -61,7 +63,9 @@ export default function Feed({ photos, username }: { photos: PhotoProps[], usern
     <section>
       <div>
         <FeedPhotos photos={photosFeed} />
-        {loading ? <p>Carregando...</p> : ''}
+        <div className={styles.loadingWrapper}>
+          {infinite ? (loading && <Loading />) : <p><em>Você visualizou todas as nossas publicações </em>🐶</p>}
+        </div>
       </div>
     </section>
   );

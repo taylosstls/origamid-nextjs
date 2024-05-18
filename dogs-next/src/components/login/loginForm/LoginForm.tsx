@@ -4,7 +4,7 @@ import { useFormState, useFormStatus } from 'react-dom';
 import loginAccount from '@/actions/loginAccount';
 import Button from '@/components/forms/Button';
 import Input from '@/components/forms/Input';
-import ErrorMessage from '@/components/helper/ErrorMessage';
+import ErrorMessage from '@/components/helper/errorMessage/ErrorMessage';
 import { useEffect } from 'react';
 import Link from 'next/link';
 

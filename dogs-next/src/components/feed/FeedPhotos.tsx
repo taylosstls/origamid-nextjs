@@ -13,7 +13,7 @@ export default function FeedPhotos({ photos }: { photos: PhotoProps[] }) {
           <li key={photo.id + i} className={styles.photo}>
             <Link href={`foto/${photo.id}`} scroll={false}>
               <Image
-                src={photo.src}
+                src={photo.src ? photo.src : '/assets/error-image.svg'}
                 alt={photo.title}
                 width={1500}
                 height={1500}

@@ -5,7 +5,7 @@ import { useFormState, useFormStatus } from 'react-dom';
 import forgotAccount from '@/actions/forgotAccount';
 import Button from '@/components/forms/Button';
 import Input from '@/components/forms/Input';
-import ErrorMessage from '@/components/helper/ErrorMessage';
+import ErrorMessage from '@/components/helper/errorMessage/ErrorMessage';
 
 import styles from './LoginFormForgotPassword.module.css';
 
