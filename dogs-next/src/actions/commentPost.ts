@@ -5,7 +5,6 @@ import { revalidateTag } from 'next/cache';
 import apiError from '@/functions/api-error';
 import { COMMENT_POST } from '@/functions/api';
 import { Comment } from './photoGet';
-import { error } from 'console';
 
 export default async function commentPost(state: {}, formData: FormData) {
   const token = cookies().get('token')?.value;
