@@ -6,6 +6,8 @@ import Footer from '@/components/footer/Footer';
 import { UserContextProvider } from '@/context/UserContext';
 import userGetCache from '@/actions/userGet';
 
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 export const metadata: Metadata = {
   title: 'Dogs Next',
   description: 'Rede social para cachorros.',
@@ -31,6 +33,7 @@ export default async function RootLayout({
             <Footer />
           </div>
         </UserContextProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
