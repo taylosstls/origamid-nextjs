@@ -3,9 +3,7 @@
 ## Descrição
 Dogs Next é uma rede social para amantes de cachorros. Os usuários podem criar uma conta, fazer login, postar imagens de seus cachorros, interagir com outras postagens, como, comentar e até mesmo deletar suas próprias postagens. A aplicação utiliza NEXTJS 14 e diversas funcionalidades interessantes para criar uma experiência única para os usuários.
 
-<p align="center">
-  ![Dogs Next Demo](https://raw.githubusercontent.com/taylosstls/origamid-nextjs/main/dogsnext-project.gif)
-</p>
+![Dogs Next Demo](https://raw.githubusercontent.com/taylosstls/origamid-nextjs/main/dogsnext-project.gif)
 
 ## Funcionalidades Principais
 
