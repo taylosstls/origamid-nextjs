@@ -85,7 +85,7 @@ a {
   font-size: 1rem;
   font-family: var(--type-first);
   cursor: pointer;
-  border: none;
+  border: 1px solid #fb1;
   border-radius: 0.4rem;
   background: #fb1;
   color: #764701;

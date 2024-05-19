@@ -22,3 +22,42 @@
   padding: 0 0 0.5rem;
   text-transform: capitalize;
 }
+
+.cadastro {
+  padding: 2rem 2rem 3rem;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cadastro p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 2rem;
+}
+
+.subtitle::after {
+  content: '';
+  display: block;
+  background: #ddd;
+  height: 0.5rem;
+  width: 3rem;
+  border-radius: 0.2rem;
+}
+
+.register {
+  display: flex;
+  gap: 0.5rem 1rem;
+  flex-wrap: nowrap;
+}
+
+.buttonCreate {
+  border: 1px solid #fb1;
+  background-color: #ffffff;
+}

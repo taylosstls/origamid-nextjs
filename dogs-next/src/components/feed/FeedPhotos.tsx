@@ -11,7 +11,7 @@ export default function FeedPhotos({ photos }: { photos: PhotoProps[] }) {
       {photos.map((photo, i) => {
         return (
           <li key={photo.id + i} className={styles.photo}>
-            <Link href={`foto/${photo.id}`} scroll={false}>
+            <Link href={`/foto/${photo.id}`} scroll={false}>
               <Image
                 src={photo.src ? photo.src : '/assets/error-image.svg'}
                 alt={photo.title}
