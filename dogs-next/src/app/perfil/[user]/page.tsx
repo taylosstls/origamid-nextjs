@@ -1,6 +1,6 @@
-import photosGet from "@/actions/photosGet";
-import NotFound from "@/app/not-found";
-import Feed from "@/components/feed/Feed";
+import photosGet from '@/actions/photosGet';
+import NotFound from '@/app/not-found';
+import Feed from '@/components/feed/Feed';
 
 export default async function PerfilUserPage({
   params,
@@ -13,7 +13,9 @@ export default async function PerfilUserPage({
 
   return (
     <section className="container mainSection">
-      <h1 className="title" style={{ marginBottom: '3rem', marginTop: '2rem' }}>{params.user}</h1>
+      <h1 className="title" style={{ marginBottom: '3rem', marginTop: '2rem' }}>
+        {params.user}
+      </h1>
 
       <Feed photos={data} username={params.user} />
     </section>
